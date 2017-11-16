@@ -1,0 +1,15 @@
+<h1>Welcome <%= @user.name %>!</h1>
+
+<% if flash[:notice] %>
+  <div class="alert alert-info"><%= flash[:notice] %></div>
+<% end %>
+
+<%= div_for(@user, class: "well") do %>
+  <strong><%= text_for_admin(@user) %></strong><br>
+  <strong>Name:</strong> <%= @user.name %><br>
+  <strong>Height:</strong> <%= @user.height %><br>
+  <strong>Mood:</strong> <%= @user.mood %><br>
+  <strong>Number Of Tickets:</strong> <%= @user.tickets %><br>
+<% end %>
+
+<%= link_to "Log Out", logout_path, :method => :delete %>

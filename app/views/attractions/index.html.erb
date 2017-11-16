@@ -1,0 +1,18 @@
+<h1>Attractions Index Page</h1>
+
+<table>
+  <tr>
+    <th>Name:</th>
+    <th>Tickets Required:</th>
+    <th></th>
+  </tr>
+  <% @attractions.each do |attraction| %>
+    <tr>
+      <td> <%= attraction.name %> </td>
+      <td> <%= attraction.tickets %> </td>
+      <td> <%= admin_attraction_show_controls(attraction) %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= admin_create_controls %>

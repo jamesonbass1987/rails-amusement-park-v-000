@@ -1,0 +1,19 @@
+<h1><%= @attraction.name %></h1>
+
+
+<%= div_for(@attraction, class: "d-inline-block") do %>
+  <strong>Tickets:</strong> <%= @attraction.tickets %><br>
+  <strong>Nausea Rating:</strong> <%= @attraction.nausea_rating %><br>
+  <strong>Happiness Rating:</strong> <%= @attraction.happiness_rating %><br>
+  <strong>Minimum Height:</strong> <%= @attraction.min_height %><br>
+
+  <%= form_for @ride do |f| %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :attraction_id %>
+    <%= f.submit "Go on this ride", :class=> "btn btn-primary" %>
+  <% end %>
+<% end %>
+
+
+<%= admin_edit_controls(@attraction) %>
+<%= admin_delete_controls(@attraction) %>
